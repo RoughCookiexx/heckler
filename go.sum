@@ -1,4 +1,4 @@
-github.com/RoughCookiexx/gg_sse v0.0.0-20250602013820-33da8ad4f453 h1:ChtZ+h0MAOy74r820kyB1uih/9JqYVFwvH6IXjMIQsI=
-github.com/RoughCookiexx/gg_sse v0.0.0-20250602013820-33da8ad4f453/go.mod h1:9R5bjI4fTuUCvYFinQY6pdERDlxqqhmWPEhx7cFcsuY=
-github.com/RoughCookiexx/twitch_chat_subscriber v0.0.0-20250530210647-4dbaff645099 h1:BFfjVtD+cSM+DS88jZrBbwQuLHu+H9jHCsPLv0gkzAc=
-github.com/RoughCookiexx/twitch_chat_subscriber v0.0.0-20250530210647-4dbaff645099/go.mod h1:VOsTwnf2ntUngOtlTRsrtraPmLHkD652w6MoYqbZtBw=
+github.com/RoughCookiexx/gg_sse v0.0.0-20250602213008-f4cdff2eb912 h1:8ghr4ImY7K+Rb/X6oFRDRzVZpk5uHV82WqDC1u/QYUo=
+github.com/RoughCookiexx/gg_sse v0.0.0-20250602213008-f4cdff2eb912/go.mod h1:9R5bjI4fTuUCvYFinQY6pdERDlxqqhmWPEhx7cFcsuY=
+github.com/RoughCookiexx/twitch_chat_subscriber v0.0.0-20250602145131-e8a1cab7feb4 h1:t6XkxkL6zSVn1XCzrv1iWgAuxpnUFoS69AsQ1yJ/ook=
+github.com/RoughCookiexx/twitch_chat_subscriber v0.0.0-20250602145131-e8a1cab7feb4/go.mod h1:VOsTwnf2ntUngOtlTRsrtraPmLHkD652w6MoYqbZtBw=

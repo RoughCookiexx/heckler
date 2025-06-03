@@ -11,10 +11,6 @@ import (
 
 const apiURL = "https://api.openai.com/v1/chat/completions"
 
-type Config struct {
-	ChatGptApiKey string `json:"chat_gpt_api_key"`
-}
-
 type chatRequest struct {
 	Model    string    `json:"model"`
 	Messages []message `json:"messages"`
@@ -31,11 +27,12 @@ type chatResponse struct {
 	} `json:"choices"`
 }
 
-func sendMessageToChatGPT(systemMessageContent, userMessageContent string) string {
-	data, _ := os.ReadFile("config.json")
-	var config Config
-	_ = json.Unmarshal(data, &config)
-	apiKey := config.ChatGptApiKey
+func sendMessageToChatGPT(systemMessageContent string, userMessageContent string) string {
+	apiKey := os.Getenv("CHAT_GPT_API_KEY")
+	if apiKey == "" {
+		fmt.Fprintln(os.Stderr, "Error: CHAT_GPT_API_KEY environment variable not set.")
+		os.Exit(1)
+	}
 
 	requestData := chatRequest{
 		Model: "o4-mini-2025-04-16",

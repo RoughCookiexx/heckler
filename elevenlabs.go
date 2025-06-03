@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 )
 
-func TextToSpeech(voiceID string, text string)  {
+func TextToSpeech(voiceID string, text string)  []byte {
+	fmt.Println("Sending request to Elevenlabs")
 	apiKey := os.Getenv("ELEVENLABS_API_KEY")
 	if apiKey == "" {
 		fmt.Fprintln(os.Stderr, "Error: ELEVENLABS_API_KEY environment variable not set.")
@@ -47,6 +49,7 @@ func TextToSpeech(voiceID string, text string)  {
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
+	log.Printf("ELEVENLABS: Got response, status code: %d", resp.StatusCode)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error making request to ElevenLabs: %v\n", err)
 		os.Exit(1)
@@ -65,5 +68,4 @@ func TextToSpeech(voiceID string, text string)  {
 	}
 	return audioBytes
 }
-
 
