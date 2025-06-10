@@ -8,15 +8,17 @@ import (
 
 	"github.com/RoughCookiexx/twitch_chat_subscriber"
 	"github.com/RoughCookiexx/gg_sse"
+	"github.com/RoughCookiexx/gg_twitch_types"
 )
 
-func heckle(message string)(string) {
-	message = afterLastColon(message)
-	log.Println("Message: ", message)
-	response := sendMessageToChatGPT("Would a reasonable person interpret this as rude? Respond with only 'yes' or 'no'", message)	
+func heckle(message twitch_types.Message)(string) {
+	messageStr := message.Content
+	log.Println("Message: ", messageStr)
+
+	response := sendMessageToChatGPT("Would a reasonable person interpret this as rude? Respond with only 'yes' or 'no'", messageStr)	
 	log.Println("Response: ", response)
 	if strings.ToLower(response) == "yes" {
-		voice_response := TextToSpeech("zxrpZKR8aSGU8OrkJzzu", message)
+		voice_response := TextToSpeech("zxrpZKR8aSGU8OrkJzzu", messageStr)
 		sse.SendBytes(voice_response)
 	}
 	return ""
